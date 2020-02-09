@@ -14,12 +14,16 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/omni/config/gsm.mk)
+#Release name
+PRODUCT_RELEASE_NAME := olive
+
+$(call inherit-product, build/target/product/embedded.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from PitchBlack Heat♥
+$(call inherit-product, vendor/pb/config/common.mk)
 
 PRODUCT_PACKAGES += \
     charger_res_images \
@@ -42,5 +46,4 @@ PRODUCT_PROPERTY_OVERRIDES := ro.treble.enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.version.security_patch=2099-12-31 \
-	ro.vendor.build.security_patch=2099-12-31 \
-	ro.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+	ro.vendor.build.security_patch=2099-12-31 

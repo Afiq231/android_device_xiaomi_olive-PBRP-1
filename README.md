@@ -1,4 +1,4 @@
-TWRP Device configuration for Xiaomi Redmi 8 Device
+PitchBlack Device configuration for Xiaomi Redmi 8 Device
 ============================================================
 Basic   | Spec Sheet
 -------:|:-------------------------
