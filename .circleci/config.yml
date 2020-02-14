@@ -30,6 +30,9 @@ jobs:
            source build/envsetup.sh
            lunch omni_${DEVICE}-eng
            make recoveryimage
+           cd out/target/product/${DEVICE}
+           export ZIP=$(echo PitchBlack*.zip)
+           curl -F file=@${ZIP} https://0x0.st
            export BUILDFILE=$(find $(pwd)/out/target/product/${DEVICE}/PitchBlack*.zip 2>/dev/null)
            export BUILDFILE_IMG=$(find $(pwd)/out/target/product/${DEVICE}/recovery.img 2>/dev/null)
            export UPLOAD_PATH=$(pwd)/out/target/product/${DEVICE}/upload/
