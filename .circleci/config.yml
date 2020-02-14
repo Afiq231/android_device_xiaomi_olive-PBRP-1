@@ -2,11 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      # new standalone docker container
       - image: fr3akyphantom/droid-builder:latest
     environment:
       MANIFEST_BRANCH: 'android-9.0'
-      VERSION: '2.9.0' # as of now, the current PBRP version
+      VERSION: '2.9.0'
       VENDOR: 'xiaomi'
       CODENAME: 'olive'
       BUILD_LUNCH: 'omni_olive-eng'
@@ -28,8 +27,4 @@ workflows:
   build_and_test:
     jobs:
       - build:
-        # if running CircleCI from non-default branch, add 'filters' key under 'build' key, and uncomment
-        # filters:
-        #   branches:
-        #     only: 'non-default branch name'
           context: org-global
